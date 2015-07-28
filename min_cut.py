@@ -23,6 +23,10 @@ class Graph:
                         
             label1 = str(cur_vertex_label)+SPLIT+str(vertex_label)
             label2 = str(vertex_label)+SPLIT+str(cur_vertex_label)
+            
+            if label1 in self.edges:
+                print('parallelel edges',label1,label2)
+                
 
             
             if label1 not in self.edges and label2 not in self.edges:
@@ -66,7 +70,7 @@ if __name__ == '__main__':
     g = Graph()
     
     for line in lines:
-        print(line.strip().split('\t'))
+        #print(line.strip().split('\t'))
         g.addEdges(line.strip().split('\t'))
         
     g.display()
